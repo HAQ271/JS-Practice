@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="iIntroDOM.js"></script>
+    <title>Introduction to DOM</title>
+  </head>
+  <body>
+    <!-- 1 Question -->
+    <div id="text">This is a test. This test is only a test.</div>
+    <div id="output"></div>
+
+    <!-- 2 Question -->
+    <ul id="cars">
+      <li>BMW</li>
+      <li>Mahindra</li>
+      <li>Audi</li>
+      <li>Toyota</li>
+      <li>Honda</li>
+      <li>Hundai</li>
+      <li>Tata</li>
+      <li>Suzuki</li>
+    </ul>
+
+    <!-- 4 Question -->
+
+    <!-- The paragraph containing words to be replaced -->
+    <p id="my-paragraph">
+      JavaScript is awesome. I love JavaScript because JavaScript makes web
+      pages dynamic!
+    </p>
+
+    <!-- Input fields and button to trigger the dynamic replacement -->
+    <div style="margin-top: 15px">
+      <input
+        type="text"
+        id="target-word"
+        placeholder="Word to find (e.g. JavaScript)"
+      />
+      <input
+        type="text"
+        id="replacement-word"
+        placeholder="Replace with (e.g. JS)"
+      />
+      <button id="replace-btn">Replace Text</button>
+    </div>
+
+    <!-- 5 Question -->
+
+    <!-- Sample page content with unique and duplicate links -->
+    <div>
+      <p>Check out these helpful developer resources:</p>
+      <ul>
+        <li><a href="https://google.com">Google Search</a></li>
+        <li><a href="https://github.com">GitHub</a></li>
+        <li><a href="https://google.com">Google (Duplicate Link)</a></li>
+        <li><a href="https://developer.mozilla.org">MDN Web Docs</a></li>
+        <li><a href="https://github.com">GitHub (Duplicate Link)</a></li>
+        <li><a href="https://stackoverflow.com">Stack Overflow</a></li>
+      </ul>
+    </div>
+
+    <!-- Output area -->
+    <div style="margin-top: 20px">
+      <button id="count-btn">Count Unique Links</button>
+      <p
+        id="link-count-display"
+        style="font-weight: bold; margin-top: 10px"
+      ></p>
+    </div>
+  </body>
+</html>
