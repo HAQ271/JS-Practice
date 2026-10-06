@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="DOM-Manipulation.js"></script>
+    <title>Day 18 - Tasks</title>
+    <style>
+      :root {
+        --bg-color: #f4f7f6;
+        --text-color: #333333;
+        --container-bg: #ffffff;
+        --border-color: #dddddd;
+        --primary-color: #007bff;
+        --primary-hover: #0056b3;
+        --table-header-bg: #f8f9fa;
+      }
+
+      body.dark-mode {
+        --bg-color: #121212;
+        --text-color: #e0e0e0;
+        --container-bg: #1e1e1e;
+        --border-color: #333333;
+        --primary-color: #bb86fc;
+        --primary-hover: #9955e8;
+        --table-header-bg: #2d2d2d;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        margin: 30px auto;
+        max-width: 800px;
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
+      }
+
+      h1,
+      h2 {
+        color: var(--primary-color);
+      }
+
+      /* Theme Toggle Button Style */
+      .theme-container {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+        margin-top: 20px;
+      }
+
+      .theme-btn {
+        background-color: var(--primary-color);
+        color: #fff;
+        border: none;
+        padding: 8px 14px;
+        cursor: pointer;
+        border-radius: 6px;
+        font-weight: bold;
+        transition: background-color 0.2s;
+      }
+
+      .theme-btn:hover {
+        background-color: var(--primary-hover);
+      }
+
+      /* Form Styles */
+      form {
+        background: var(--container-bg);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        margin-bottom: 25px;
+        border: 1px solid var(--border-color);
+      }
+
+      input,
+      select,
+      button {
+        padding: 8px 12px;
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        font-size: 14px;
+        background-color: var(--container-bg);
+        color: var(--text-color);
+      }
+
+      input {
+        margin-right: 10px;
+      }
+
+      button[type="submit"],
+      #submit-btn,
+      button[id*="btn"] {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      button[type="submit"]:hover,
+      #submit-btn:hover {
+        background-color: var(--primary-hover);
+      }
+
+      /* Table Styles */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background: var(--container-bg);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      th,
+      td {
+        border: 1px solid var(--border-color);
+        padding: 12px;
+        text-align: left;
+      }
+
+      th {
+        background-color: var(--table-header-bg);
+      }
+
+      .search-container {
+        margin-bottom: 15px;
+      }
+
+      .delete-btn {
+        background-color: #ff4d4d;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+
+      .delete-btn:hover {
+        background-color: #cc0000;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1 Question -->
+
+    <h1>Dynamic Form Creator</h1>
+
+    <div id="form-container"></div>
+
+    <!-- 2 Question -->
+
+    <h2>Dynamic Table: Add, Delete, and Search</h2>
+
+    <!-- Form to Add Rows -->
+    <form id="add-form">
+      <input type="text" id="name-input" placeholder="Enter Name" required />
+      <input type="number" id="age-input" placeholder="Enter Age" required />
+      <input type="text" id="role-input" placeholder="Enter Role" required />
+      <button type="submit" id="submit-btn">Add Row</button>
+    </form>
+
+    <!-- Search Input -->
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search by name..." />
+    </div>
+
+    <!-- Table Structure -->
+    <table id="data-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <!-- Dynamic rows will be inserted here -->
+      </tbody>
+    </table>
+
+    <!-- 3 Question: Theme Switcher Toggle -->
+    <div class="theme-container">
+      <button id="theme-toggle-btn" class="theme-btn">🌙 Toggle Theme</button>
+    </div>
+  </body>
+</html>
